@@ -5,20 +5,20 @@ class Television:
     MIN_VOLUME = 0      # Minimum TV volume
     MAX_VOLUME = 2      # Maximum TV volume
 
-    def __init__(self):
+    def __init__(self) -> None:
         """
         This method is used to initialize the TV object.
         :param TV_Channel: This is the initial TV channel.
         :param TV_Volume: This is the initial TV volume.
         :param TV_ISON: This is the initial TV status.
         """
-        self.__TV_Channel = Television.MIN_CHANNEL
-        self.__TV_VOLUME = Television.MIN_VOLUME
-        self.__TV_ISON = False
+        self.__TV_Channel: int = Television.MIN_CHANNEL
+        self.__TV_VOLUME: int = Television.MIN_VOLUME
+        self.__TV_ISON: bool = False
 
         pass
 
-    def power(self):
+    def power(self) -> None:
         """
         This turns the tv on and off
         :param TV_ISON: This is the TV status.
@@ -32,7 +32,7 @@ class Television:
             self.__TV_ISON = False
         pass
 
-    def channel_up(self):
+    def channel_up(self) -> None:
         """
         This method should be used to adjust the TV channel by incrementing its value up.
         :param TV_Channel: This is the TV channel.
@@ -48,7 +48,7 @@ class Television:
 
         pass
 
-    def channel_down(self):
+    def channel_down(self) -> None:
         """
         This method should be used to adjust the TV channel by decrementing its value down.
         :param TV_Channel: This is the TV channel.
@@ -65,7 +65,7 @@ class Television:
 
         pass
 
-    def volume_up(self):
+    def volume_up(self) -> None:
         """
         This method should be used to adjust the TV volume by incrementing its value up.
         :param TV_Volume: This is the TV volume.
@@ -81,7 +81,7 @@ class Television:
 
         pass
 
-    def volume_down(self):
+    def volume_down(self) -> None:
         """
         This method should be used to adjust the TV volume by decrementing its value down.
         :param TV_Volume: This is the TV volume.
