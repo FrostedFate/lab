@@ -10,14 +10,14 @@ class test:
 #testing on and off as well as initializing the class
 
     def test_init(self):
-        assert self.tv.__str__() == "TV status: Is on = True, Channel = 0, Volume = 0"
+        assert self.tv.__str__() == "TV status: Is on = False, Channel = 0, Volume = 0"
 
 
     def test_power(self):
         self.tv.power()
-        assert self.tv.__str__() == "TV status: Is on = False, Channel = 0, Volume = 0"
-        self.tv.power()
         assert self.tv.__str__() == "TV status: Is on = True, Channel = 0, Volume = 0"
+        self.tv.power()
+        assert self.tv.__str__() == "TV status: Is on = False, Channel = 0, Volume = 0"
 
 #testing channels
 
@@ -59,7 +59,7 @@ class test:
 
         self.tv.volume_up()
         self.tv.volume_up()
-        assert self.tv.__str__() == "TV status: Is on = True, Channel = 0, Volume = 0"
+        assert self.tv.__str__() == "TV status: Is on = True, Channel = 0, Volume = 2"
 
     def test_volume_down(self):
         self.tv.volume_down()
@@ -67,8 +67,12 @@ class test:
 
         self.tv.power()
         self.tv.volume_down()
-        assert self.tv.__str__() == "TV status: Is on = True, Channel = 0, Volume = 2"
-
-        self.tv.volume_down()
-        self.tv.volume_down()
         assert self.tv.__str__() == "TV status: Is on = True, Channel = 0, Volume = 0"
+
+        self.tv.volume_up()
+        self.tv.volume_up()
+        self.tv.volume_down()
+        assert self.tv.__str__() == "TV status: Is on = True, Channel = 0, Volume = 1"
+
+
+    
